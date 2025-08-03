@@ -1,24 +1,20 @@
-# Functional Language Features: Iterators and Closures
+# Fonksiyonel Dil Özellikleri: İteratörler ve Kapanışlar
 
-Rust’s design has taken inspiration from many existing languages and
-techniques, and one significant influence is _functional programming_.
-Programming in a functional style often includes using functions as values by
-passing them in arguments, returning them from other functions, assigning them
-to variables for later execution, and so forth.
+Rust’un tasarımı, birçok mevcut programlama dili ve teknikten ilham almıştır. Bu etkilerden biri de _fonksiyonel programlama_dır. Fonksiyonel tarzda programlama genellikle şunları içerir:
 
-In this chapter, we won’t debate the issue of what functional programming is or
-isn’t but will instead discuss some features of Rust that are similar to
-features in many languages often referred to as functional.
+- Fonksiyonları değer gibi kullanmak,
+- Fonksiyonları başka fonksiyonlara argüman olarak vermek,
+- Fonksiyonlardan geri döndürmek,
+- İleride çalıştırmak üzere değişkenlere atamak,
+- ve benzeri işlemler.
 
-More specifically, we’ll cover:
+Bu bölümde fonksiyonel programlamanın ne olup ne olmadığı tartışılmayacak; bunun yerine, genellikle fonksiyonel dillerle ilişkilendirilen bazı Rust özelliklerine odaklanacağız.
 
-- _Closures_, a function-like construct you can store in a variable
-- _Iterators_, a way of processing a series of elements
-- How to use closures and iterators to improve the I/O project in Chapter 12
-- The performance of closures and iterators (spoiler alert: they’re faster than
-  you might think!)
+Daha özel olarak şunları ele alacağız:
 
-We’ve already covered some other Rust features, such as pattern matching and
-enums, that are also influenced by the functional style. Because mastering
-closures and iterators is an important part of writing idiomatic, fast Rust
-code, we’ll devote this entire chapter to them.
+- _Kapanışlar_, bir değişkene atanabilen fonksiyon benzeri yapılardır
+- _İteratörler_, bir dizi öğeyi işlemeye yarayan yapılardır
+- Kapanışlar ve iteratörleri kullanarak 12. bölümdeki G/Ç projesini nasıl geliştirebiliriz
+- Kapanışlar ve iteratörlerin performansı (sürpriz: düşündüğünüzden hızlılar!)
+
+Daha önce pattern matching (desen eşleme) ve enum’lar gibi Rust’un fonksiyonel tarzdan etkilenen bazı özelliklerini gördük. Kapanışları ve iteratörleri iyi öğrenmek, hızlı ve idiomatik Rust kodu yazmak için önemlidir. Bu bölümü tamamen bu konulara ayıracağız.

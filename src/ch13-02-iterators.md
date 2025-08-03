@@ -1,15 +1,8 @@
-## Processing a Series of Items with Iterators
+## Yineleyicilerle Bir Dizi Öğeyi İşlemek
 
-The iterator pattern allows you to perform some task on a sequence of items in
-turn. An iterator is responsible for the logic of iterating over each item and
-determining when the sequence has finished. When you use iterators, you don’t
-have to reimplement that logic yourself.
+Yineleyici deseni (iterator pattern), bir dizi öğe üzerinde sırayla bazı görevleri yerine getirmenizi sağlar. Bir yineleyici, her bir öğe üzerinde yineleme mantığından ve dizinin ne zaman bittiğini belirlemekten sorumludur. Yineleyicileri kullandığınızda, bu mantığı kendiniz yeniden uygulamanıza gerek kalmaz.
 
-In Rust, iterators are _lazy_, meaning they have no effect until you call
-methods that consume the iterator to use it up. For example, the code in
-Listing 13-10 creates an iterator over the items in the vector `v1` by calling
-the `iter` method defined on `Vec<T>`. This code by itself doesn’t do anything
-useful.
+Rust'ta yineleyiciler tembeldir, yani yineleyiciyi kullanmak için onu tüketen metotları çağırmadığınız sürece hiçbir etkisi olmazlar. Örneğin, Listing 13-10'daki kod, Vec<T> üzerinde tanımlı iter metodunu çağırarak v1 vektöründeki öğeler üzerinde bir yineleyici oluşturur. Bu kodun kendisi tek başına yararlı bir iş yapmaz.
 
 <Listing number="13-10" file-name="src/main.rs" caption="Creating an iterator">
 
@@ -19,16 +12,9 @@ useful.
 
 </Listing>
 
-The iterator is stored in the `v1_iter` variable. Once we’ve created an
-iterator, we can use it in a variety of ways. In Listing 3-5, we iterated over
-an array using a `for` loop to execute some code on each of its items. Under
-the hood, this implicitly created and then consumed an iterator, but we glossed
-over how exactly that works until now.
+Yineleyici v1_iter değişkeninde saklanır. Bir yineleyici oluşturduktan sonra, onu çeşitli şekillerde kullanabiliriz. Listing 3-5'te, bir dizi üzerinde for döngüsü kullanarak öğelerinden her birinde bazı kodları yürütmüştük. Arka planda, bu örtülü olarak bir yineleyici oluşturdu ve sonra onu tüketti, ancak bunun tam olarak nasıl çalıştığını şimdiye kadar detaylandırmamıştık.
 
-In the example in Listing 13-11, we separate the creation of the iterator from
-the use of the iterator in the `for` loop. When the `for` loop is called using
-the iterator in `v1_iter`, each element in the iterator is used in one
-iteration of the loop, which prints out each value.
+Listing 13-11'deki örnekte, yineleyicinin oluşturulmasını, for döngüsünde yineleyicinin kullanılmasından ayırıyoruz. v1_iter içindeki yineleyici kullanılarak for döngüsü çağrıldığında, yineleyicideki her bir öğe döngünün bir tekrarında kullanılır ve her bir değeri yazdırır.
 
 <Listing number="13-11" file-name="src/main.rs" caption="Using an iterator in a `for` loop">
 
@@ -38,21 +24,13 @@ iteration of the loop, which prints out each value.
 
 </Listing>
 
-In languages that don’t have iterators provided by their standard libraries,
-you would likely write this same functionality by starting a variable at index
-0, using that variable to index into the vector to get a value, and
-incrementing the variable value in a loop until it reached the total number of
-items in the vector.
+Standart kütüphaneleri tarafından yineleyici sağlamayan dillerde, muhtemelen bu aynı işlevselliği, bir değişkeni 0 dizininde başlatarak, o değişkeni vektöre dizin olarak kullanarak bir değer elde etmek için ve değişkenin değerini döngüde vektördeki toplam öğe sayısına ulaşana kadar artırarak yazardınız.
 
-Iterators handle all of that logic for you, cutting down on repetitive code you
-could potentially mess up. Iterators give you more flexibility to use the same
-logic with many different kinds of sequences, not just data structures you can
-index into, like vectors. Let’s examine how iterators do that.
+Yineleyiciler, tüm bu mantığı sizin için halleder, böylece hata yapma potansiyeli olan tekrarlayan kodu azaltır. Yineleyiciler, aynı mantığı yalnızca vektörler gibi dizinleyebileceğiniz veri yapılarıyla değil, birçok farklı dizi türüyle kullanmak için size daha fazla esneklik sunar. Şimdi yineleyicilerin bunu nasıl yaptığını inceleyelim.
 
-### The `Iterator` Trait and the `next` Method
+###  `Iterator` özelliği ve `next` Metodu
 
-All iterators implement a trait named `Iterator` that is defined in the
-standard library. The definition of the trait looks like this:
+Tüm yineleyiciler, standart kütüphanede tanımlı `Iterator` adlı bir özellik (trait) uygular. Özelliğin tanımı şöyle görünür:
 
 ```rust
 pub trait Iterator {
