@@ -33,7 +33,7 @@ Derleyici hataları sinir bozucu olabilir, ancak gerçekte bunlar yalnızca prog
 yapmasını istediğiniz şeyi henüz güvenli bir şekilde yapmadığı anlamına gelir; sizin
 iyi bir programcı olmadığınız anlamına gelmez! Deneyimli Rustaceanlar hala derleyici hataları alırlar.
 
-Değişmez `x` değişkenine ikinci bir değer atamaya çalıştığınız için ``değişmez `x` değişkenine iki kez atama yapılamıyor`` hata mesajını aldınız.
+Değişmez `x` değişkenine ikinci bir değer atamaya çalıştığınız için değişmez `x` değişkenine iki kez atama yapılamıyor hata mesajını aldınız.
 
 Değişmez olarak belirlenmiş bir
 değerini değiştirmeye çalıştığımızda derleme zamanı hataları almamız önemlidir, çünkü bu durum
@@ -47,8 +47,7 @@ değişmeyeceğini garanti eder, böylece bunu kendiniz takip etmek zorunda kalm
 daha kolay olur.
 
 Bdeğişebilirlik çok yararlı olabilir ve kod yazmayı daha kolay hale getirebilir.
-Değişkenler varsayılan olarak değişmez olsa da, [Bölüm
-2][storing-values-with-variables]<!-- ignore -->'da yaptığınız gibi
+Değişkenler varsayılan olarak değişmez olsa da, [Bölüm 2][storing-values-with-variables]<!-- ignore -->'da yaptığınız gibi
 değişken adının önüne `mut` ekleyerek onları değişebilir hale getirebilirsiniz. mut` eklemek ayrıca
 kodunun diğer bölümlerinin bu değişkenin değerini değiştireceğini belirterek kodun gelecekteki okuyucularına
 niyetini iletir.
@@ -104,8 +103,7 @@ alt çizgi ile tüm büyük harfleri kullanmaktır. Derleyici, derleme zamanınd
 işlemini değerlendirebilir, bu da bu değeri
 sabitini 10.800 değerine ayarlamak yerine, anlaşılması ve doğrulanması daha kolay olan
 bir şekilde yazmayı seçmemizi sağlar. Sabitleri bildirirken
-hangi işlemlerin kullanılabileceği hakkında daha fazla bilgi için [Rust Reference'ın constant
-evaluation][const-eval] bölümüne bakın.
+hangi işlemlerin kullanılabileceği hakkında daha fazla bilgi için [Rust Reference'ın constant evaluation][const-eval] bölümüne bakın.
 
 Sabitler, bildirildikleri
 kapsamı dahilinde bir programın çalıştığı süre boyunca geçerlidir. Bu özellik sabitleri
@@ -182,7 +180,7 @@ Hata, bir değişkenin türünü değiştirmemize izin verilmediğini söylüyor
 Şimdi değişkenlerin nasıl çalıştığını keşfettiğimize göre,
 sahip olabilecekleri daha fazla veri türüne bakalım.
 
-[comparing-the-guess-to-the-secret-number]: ch02-00-guessing-game-tutorial.html#comparing-the-guess-to-the-secret-number
-[data-types]: ch03-02-data-types.html#data-types
-[storing-values-with-variables]: ch02-00-guessing-game-tutorial.html#storing-values-with-variables
-[const-eval]: ../reference/const_eval.html
+[comparing-the-guess-to-the-secret-number]: ch02-00-guessing-game-tutorial.md#Tahmini-Gizli-Sayı-ile-Karşılaştırma
+[data-types]: ch03-02-data-types.md#Veri-Türleri
+[storing-values-with-variables]: ch02-00-guessing-game-tutorial.md#Değerleri-Değişkenlerle-Saklama
+[const-eval]:https://doc.rust-lang.org/reference/const_eval.html

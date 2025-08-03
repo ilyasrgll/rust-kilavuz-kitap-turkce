@@ -236,7 +236,7 @@ heap üzerinde ayırdık. Şimdi bu durumlardan bazılarını inceleyelim.
 
 <a id="ways-variables-and-data-interact-move"></a>
 
-#### Variables and Data Interacting with Move
+#### Move ile Etkileşime Giren Değişkenler ve Veriler
 
 Rust'ta birden fazla değişken aynı veri ile farklı şekillerde etkileşime girebilir.
 Liste 4-2'de bir tamsayı kullanan bir örneğe bakalım.
@@ -427,7 +427,7 @@ Ancak bu kod az önce öğrendiklerimizle çelişiyor gibi görünüyor:
 
 Bunun nedeni, derleme sırasında bilinen bir boyuta sahip olan tamsayılar gibi türlerin
 zaman tamamen yığında saklanır, bu nedenle gerçek değerlerin kopyaları hızlı
-yapmak için. Bu da `x'in, ‘x’ olmasını engellemek istememiz için hiçbir neden olmadığı anlamına gelir.
+yapmak için. Bu da `x`in, ‘x’ olmasını engellemek istememiz için hiçbir neden olmadığı anlamına gelir.
 değişkenini oluşturduktan sonra geçerlidir. Başka bir deyişle, hiçbir fark yok
 Burada derin ve sığ kopyalama arasında bir fark yoktur, bu nedenle `clone` çağrısı hiçbir şey yapmaz
 normal sığ kopyalamadan farklıdır ve bunu dışarıda bırakabiliriz.
@@ -517,10 +517,10 @@ Ancak bu, olması gereken bir konsept için çok fazla tören ve çok fazla iş
 yaygındır. Şanslıyız ki Rust'ta bir değeri
 mülkiyetin aktarılması, _referanslar_ olarak adlandırılır.
 
-[data-types]: ch03-02-data-types.html#data-types
-[ch8]: ch08-02-strings.html
-[traits]: ch10-02-traits.html
-[derivable-traits]: appendix-03-derivable-traits.html
-[method-syntax]: ch05-03-method-syntax.html#method-syntax
-[paths-module-tree]: ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html
-[drop]: ../std/ops/trait.Drop.html#tymethod.drop
+[data-types]: ch03-02-data-types.md#dVeri-Türleri
+[ch8]: ch08-02-strings.md
+[traits]: ch10-02-traits.md
+[derivable-traits]: appendix-03-derivable-traits.md
+[method-syntax]: ch05-03-method-syntax.md#Yöntem-Sözdizimi
+[paths-module-tree]: ch07-03-paths-for-referring-to-an-item-in-the-module-tree.md
+[drop]: ../std/ops/trait.Drop.md#tymethod.drop
